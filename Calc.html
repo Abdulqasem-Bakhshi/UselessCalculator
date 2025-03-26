@@ -13,50 +13,61 @@
     <!-- Title Bar -->
     <div>
       <div class="title-bar">
+        <button id="minimize">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+            <path d="M240-120v-80h480v80H240Z" />
+          </svg>
+        </button>
+
         <button id="close">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path
               d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
         </button>
-        <button id="minimize">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
-            <path d="M240-120v-80h480v80H240Z" />
-          </svg>
-        </button>
       </div>
     </div>
     <div>
-      <div class="Display">
-        <div id="Display1" class="DisplayContent">5x2</div>
-        <div id="Display2" class="DisplayContent">10</div>
+      <div id="display" class="Display">
       </div>
 
       <div class="Buttons">
-        <button class="Button">AC</button>
-        <button class="Button">+/-</button>
-        <button class="Button">%</button>
-        <button id="Operator" class="Button">/</button>
-        <button class="Button">7</button>
-        <button class="Button">8</button>
-        <button class="Button">9</button>
-        <button id="Operator" class="Button">*</button>
-        <button class="Button">4</button>
-        <button class="Button">5</button>
-        <button class="Button">6</button>
-        <button id="Operator" class="Button">-</button>
-        <button class="Button">1</button>
-        <button class="Button">2</button>
-        <button class="Button">3</button>
-        <button id="Operator" class="Button">+</button>
-        <button class="Button">Calc</button>
-        <button class="Button">0</button>
-        <button class="Button">,</button>
-        <button id="Operator" class="Button">=</button>
+        <button class="Button" onclick="buttonShow('C')">AC</button>
+        <button class="Button" onclick="buttonShow('+/-')">+/-</button>
+        <button class="Button" onclick="buttonShow('%')">%</button>
+        <button class="Button" onclick="buttonShow('/')">/</button>
+        <button class="Button" onclick="buttonShow('7')">7</button>
+        <button class="Button" onclick="buttonShow('8')">8</button>
+        <button class="Button" onclick="buttonShow('9')">9</button>
+        <button class="Button" onclick="buttonShow('*')">*</button>
+        <button class="Button" onclick="buttonShow('4')">4</button>
+        <button class="Button" onclick="buttonShow('5')">5</button>
+        <button class="Button" onclick="buttonShow('6')">6</button>
+        <button class="Button" onclick="buttonShow('-')">-</button>
+        <button class="Button" onclick="buttonShow('1')">1</button>
+        <button class="Button" onclick="buttonShow('2')">2</button>
+        <button class="Button" onclick="buttonShow('3')">3</button>
+        <button class="Button" onclick="buttonShow('+')">+</button>
+        <button class="Button" onclick="buttonShow('Calc')">Calc</button>
+        <button class="Button" onclick="buttonShow('0')">0</button>
+        <button class="Button" onclick="buttonShow(',')">,</button>
+        <button class="Button" onclick="buttonShow('=')">=</button>
       </div>
     </div>
   </div>
   <script src="renderer.js"></script>
-</body>
+  <script>
+    let currentValue = "";
 
+function buttonShow(value) {
+  const display = document.getElementById('display')
+  if (value === 'C') {
+    currentValue = '';
+  } else {
+    currentValue += value;
+}
+display.innerText = currentValue;
+}
+  </script>
+</body>
 </html>
