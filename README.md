@@ -1,1 +1,1 @@
-My first calculator project.
+My first useless calculator project.
