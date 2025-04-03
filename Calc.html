@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Calc.css">
+    <!-- Use defer to ensure script runs after DOM is loaded -->
+    <script src="renderer.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="Calc.css">
-</head>
-
-<body>
-  <!-- Calculator -->
-  <div class="Calculator">
-    <!-- Title Bar -->
-    <div>
+  <body>
+    <!-- Calculator -->
+    <div class="Calculator">
       <div class="title-bar">
         <button id="minimize">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path d="M240-120v-80h480v80H240Z" />
           </svg>
         </button>
-
         <button id="close">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path
@@ -26,10 +24,8 @@
           </svg>
         </button>
       </div>
-    </div>
-    <div>
-      <div id="display" class="Display">
-      </div>
+      
+      <div id="display" class="Display"></div>
 
       <div class="Buttons">
         <button class="Button" onclick="buttonShow('C')">AC</button>
@@ -48,26 +44,11 @@
         <button class="Button" onclick="buttonShow('2')">2</button>
         <button class="Button" onclick="buttonShow('3')">3</button>
         <button class="Button" onclick="buttonShow('+')">+</button>
-        <button class="Button" onclick="buttonShow('Calc')">Calc</button>
+        <button class="Button" onclick="buttonShow('?')">?</button>
         <button class="Button" onclick="buttonShow('0')">0</button>
         <button class="Button" onclick="buttonShow(',')">,</button>
         <button class="Button" onclick="buttonShow('=')">=</button>
       </div>
     </div>
-  </div>
-  <script src="renderer.js"></script>
-  <script>
-    let currentValue = "";
-
-function buttonShow(value) {
-  const display = document.getElementById('display')
-  if (value === 'C') {
-    currentValue = '';
-  } else {
-    currentValue += value;
-}
-display.innerText = currentValue;
-}
-  </script>
-</body>
+  </body>
 </html>

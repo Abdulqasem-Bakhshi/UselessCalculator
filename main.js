@@ -16,9 +16,10 @@ app.on('ready', () => {
     resizable: false,
     icon: __dirname + '/icon.png',
     webPreferences: {
-      devTools: false,
-      nodeIntegration: true,
-      contextIsolation: false,
+      devTools: true,
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js')
     },
   });
 
