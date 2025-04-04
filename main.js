@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path'); // import path module for preload
 
 let mainWindow;
 
@@ -10,7 +11,7 @@ function createWindow() {
 }
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 300,
+    width: 263,
     height: 359,
     frame: false,
     resizable: false,
