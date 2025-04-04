@@ -11,7 +11,7 @@ function createWindow() {
 }
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 263,
+    width: 322,
     height: 359,
     frame: false,
     resizable: false,
