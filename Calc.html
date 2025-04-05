@@ -3,30 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useless Calculator</title>
     <link rel="stylesheet" type="text/css" href="Calc.css">
     <!-- Use defer to ensure script runs after DOM is loaded -->
     <script src="renderer.js" defer></script>
   </head>
 
   <body>
-    <!-- Calculator -->
-    <div class="Calculator">
-      <div class="title-bar">
-        <button id="minimize">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
-            <path d="M240-120v-80h480v80H240Z" />
+    <main class="calculator-wrap">
+      <!-- Calculator -->
+      <div class="Calculator">
+        <div class="title-bar">
+          <button id="minimize">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+              <path d="M240-120v-80h480v80H240Z" />
           </svg>
         </button>
         <button id="close">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path
-              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
         </button>
       </div>
       
       <div id="display" class="Display"></div>
-
+      
       <div class="Buttons">
         <button class="Button" onclick="buttonShow('C')">AC</button>
         <button class="Button" onclick="buttonShow('+/-')">+/-</button>
@@ -50,5 +52,7 @@
         <button class="Button" onclick="buttonShow('=')">=</button>
       </div>
     </div>
+  </main>
   </body>
-</html>
+  </html>
+  

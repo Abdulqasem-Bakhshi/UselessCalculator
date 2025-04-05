@@ -1,4 +1,7 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const ipcMain = electron.ipcMain;
 const path = require('path'); // import path module for preload
 
 let mainWindow;
@@ -9,15 +12,15 @@ function createWindow() {
   }
 
 }
-app.on('ready', () => {
+function mainWindowRes() {
   mainWindow = new BrowserWindow({
-    width: 322,
-    height: 359,
+    width: 300,
+    height: 425,
     frame: false,
     resizable: false,
     icon: __dirname + '/icon.png',
     webPreferences: {
-      devTools: true,
+      devTools: false,
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
@@ -25,7 +28,9 @@ app.on('ready', () => {
   });
 
   mainWindow.loadFile('Calc.html');
-});
+};
+
+app.on('ready', mainWindowRes);
 
 // Listen for minimize and close events from the renderer process
 ipcMain.on('minimize-window', () => {
