@@ -4,5 +4,5 @@
 
 Have fun!
 
-# 👇 Launch App Here 👇
+# 👇 Launch App via Browser 👇
 https://abdulqasem-bakhshi.github.io/UselessCalculator/
