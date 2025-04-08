@@ -15,11 +15,13 @@ function createWindow() {
 function mainWindowRes() {
   mainWindow = new BrowserWindow({
     width: 300,
-    height: 425,
+    height: 400,
     minWidth: 300,
-    minHeight: 425,
+    minHeight: 400,
+    maxWidth: 600,
+    maxHeight: 800,
     frame: false,
-    resizable: false,
+    resizable: true,
     icon: __dirname + '/icon.png',
     webPreferences: {
       devTools: false,

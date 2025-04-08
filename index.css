@@ -21,6 +21,7 @@ html, head, main, body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  user-select: none;
   border: 2px solid blue;
 }
 
@@ -57,18 +58,30 @@ html, head, main, body {
 
 .App-Buttons {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 30px;
+  -webkit-app-region: drag;
   border: 1px solid orange;
 }
 
 .App-Button {
+  display: flex;
+  justify-content: flex-end;
   border: 1px solid black;
   cursor: pointer;
+  -webkit-app-region: no-drag;
 }
 
 .Calculator {
-  width: 300px; /* Hardcoded */
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+#App-Name {
+  flex: 1;
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
