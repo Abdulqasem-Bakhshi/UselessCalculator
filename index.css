@@ -56,9 +56,21 @@ html, head, main, body {
   border: 1px solid purple;
 }
 
-.App-Buttons {
+/* Calculator Container */
+
+.Calculator-Wrap {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.Calculator {
+
+}
+
+.Navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 30px;
   -webkit-app-region: drag;
   border: 1px solid orange;
@@ -66,22 +78,36 @@ html, head, main, body {
 
 .App-Button {
   display: flex;
+  height: 100%;
   justify-content: flex-end;
   border: 1px solid black;
   cursor: pointer;
   -webkit-app-region: no-drag;
 }
 
-.Calculator {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+.App-Name {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: fit-content;
+  height: 100%;
+  padding-left: 5px;
+  overflow: hidden; /* Hide/Cut text behind borders */
+  text-overflow: ellipsis; /* Use ellipsis to cut text */
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  opacity: 75%;
+  border: 1px solid black;
 }
 
 #App-Name {
   flex: 1;
-  padding-left: 5px;
   justify-content: center;
   align-items: center;
   align-content: center;
+  border: 5px solid green;
+  width: auto;
 }
