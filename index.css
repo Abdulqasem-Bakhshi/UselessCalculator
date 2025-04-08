@@ -4,14 +4,15 @@
   padding: 0;
 }
 
+/* Set default containers to 100% of screen */
 html, head, main, body {
   height: 100%;
   width: 100%;
 }
 
+/* Buttons Constainer and its Children */
 .Buttons {
-  width: 300px;
-  border: 5px solid red;
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -43,4 +44,31 @@ html, head, main, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Display Container */
+.Display {
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 1px solid purple;
+}
+
+.App-Buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 30px;
+  border: 1px solid orange;
+}
+
+.App-Button {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.Calculator {
+  width: 300px; /* Hardcoded */
+  display: grid;
 }
