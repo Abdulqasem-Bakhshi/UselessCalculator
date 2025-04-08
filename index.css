@@ -12,9 +12,10 @@ html, head, main, body {
 
 /* Buttons Constainer and its Children */
 .Buttons {
-  border: 1px solid red;
+  border: 5px solid red;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .Button-Container {
@@ -22,7 +23,7 @@ html, head, main, body {
   flex-direction: row;
   justify-content: space-between;
   user-select: none;
-  border: 2px solid blue;
+  border: 1px solid blue;
 }
 
 .Button-Numbers {
@@ -49,7 +50,7 @@ html, head, main, body {
 
 /* Display Container */
 .Display {
-  height: 30px;
+  min-height: 30px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -59,19 +60,24 @@ html, head, main, body {
 /* Calculator Container */
 
 .Calculator-Wrap {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
 }
-.Calculator {
 
+.Calculator {
+  width: 100%;
+  height: 400px; /* Hardcoded */
+  border: 1px solid pink;
 }
 
 .Navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  height: 30px; /* Hardcoded */
   -webkit-app-region: drag;
   border: 1px solid orange;
 }
