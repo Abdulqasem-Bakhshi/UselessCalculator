@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useless Calculator</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="renderer.js" defer></script>
-  </head>
 
-  <body>
-    <main class="calculator-wrap">
-      <div class="Calculator">
-        <div class="title-bar">
-          <button id="minimize">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
-              <path d="M240-120v-80h480v80H240Z" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Useless Calculator</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="renderer.js" defer></script>
+</head>
+
+<body>
+  <main class="calculator-wrap">
+    <div class="Calculator">
+      <div class="title-bar">
+        <div id="minimize">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+            <path d="M240-120v-80h480v80H240Z" />
           </svg>
-        </button>
-        <button id="close">
+        </div>
+        <div id="close">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path
-            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
-        </button>
+        </div>
       </div>
-      
+
+      <!-- Calculator With Keys -->
       <div id="display" class="Display"></div>
-      
+
       <div class="Buttons">
-        <button class="Button" onclick="buttonShow('C')">AC</button>
-        <button class="Button" onclick="buttonShow('+/-')">+/-</button>
-        <button class="Button" onclick="buttonShow('%')">÷100</button>
-        <button class="Button" onclick="buttonShow('/')">/</button>
-        <button class="Button" onclick="buttonShow('7')">7</button>
-        <button class="Button" onclick="buttonShow('8')">8</button>
-        <button class="Button" onclick="buttonShow('9')">9</button>
-        <button class="Button" onclick="buttonShow('*')">*</button>
-        <button class="Button" onclick="buttonShow('4')">4</button>
-        <button class="Button" onclick="buttonShow('5')">5</button>
-        <button class="Button" onclick="buttonShow('6')">6</button>
-        <button class="Button" onclick="buttonShow('-')">-</button>
-        <button class="Button" onclick="buttonShow('1')">1</button>
-        <button class="Button" onclick="buttonShow('2')">2</button>
-        <button class="Button" onclick="buttonShow('3')">3</button>
-        <button class="Button" onclick="buttonShow('+')">+</button>
-        <button class="Button" onclick="buttonShow('?')">?</button>
-        <button class="Button" onclick="buttonShow('0')">0</button>
-        <button class="Button" onclick="buttonShow(',')">,</button>
-        <button class="Button" onclick="buttonShow('=')">=</button>
+        <div class="Button-Container">
+          <div class="Button-Numbers">
+            <div class="Button">1</div>
+            <div class="Button">2</div>
+            <div class="Button">3</div>
+            <div class="Button">4</div>
+            <div class="Button">5</div>
+            <div class="Button">6</div>
+            <div class="Button">7</div>
+            <div class="Button">8</div>
+            <div class="Button">9</div>
+            <div class="Button">0</div>
+          </div>
+          <div class="Button-Operators">
+            <div class="Button">+</div>
+            <div class="Button">-</div>
+            <div class="Button">*</div>
+            <div class="Button">/</div>
+            <div class="Button">=</div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
-  </body>
-  </html>
-  
+</body>
+
+</html>

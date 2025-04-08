@@ -1,6 +1,4 @@
 window.onload = () => {
-  console.log("renderer.js start");
-
   // Minimize and Close buttons
   const minimizeButton = document.getElementById('minimize');
   const closeButton = document.getElementById('close');
@@ -42,6 +40,4 @@ window.onload = () => {
 
     display.innerText = currentValue; // Update the display
   };
-
-  console.log("renderer.js is loading");
 };
