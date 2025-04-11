@@ -15,12 +15,12 @@
       <div class="Navbar">
         <div class="App-Name">Useless Calculator</div>
         <div id="App-Name"></div>
-        <div class="App-Button" id="minimize">
+        <div id="App-Button-Minimize" class="App-Button">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path d="M240-120v-80h480v80H240Z" />
           </svg>
         </div>
-        <div class="App-Button" id="close">
+        <div id="App-Button-Close" class="App-Button">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
             <path
               d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
@@ -29,34 +29,34 @@
       </div>
 
         <!-- Calculator With Keys -->
-        <div class="Display">5+5=10</div>
+        <div class="Display"></div>
 
         <div class="Buttons">
           <div class="Button-Container">
             <div class="Button-Numbers">
-              <div class="Button">C</div>
-              <div class="Button">CE</div>
-              <div class="Button">←</div>
-              <div class="Button">7</div>
-              <div class="Button">8</div>
-              <div class="Button">9</div>
-              <div class="Button">4</div>
-              <div class="Button">5</div>
-              <div class="Button">6</div>
-              <div class="Button">1</div>
-              <div class="Button">2</div>
-              <div class="Button">3</div>
-              <div class="Button">±</div>
-              <div class="Button">0</div>
-              <div class="Button">.</div>
+              <div class="Button" onclick="buttonShow('C')">C</div>
+              <div class="Button" onclick="buttonShow('CE')">CE</div>
+              <div class="Button" onclick="buttonShow('←')">←</div>
+              <div class="Button" onclick="buttonShow('7')">7</div>
+              <div class="Button" onclick="buttonShow('8')">8</div>
+              <div class="Button" onclick="buttonShow('9')">9</div>
+              <div class="Button" onclick="buttonShow('4')">4</div>
+              <div class="Button" onclick="buttonShow('5')">5</div>
+              <div class="Button" onclick="buttonShow('6')">6</div>
+              <div class="Button" onclick="buttonShow('1')">1</div>
+              <div class="Button" onclick="buttonShow('2')">2</div>
+              <div class="Button" onclick="buttonShow('3')">3</div>
+              <div class="Button" onclick="buttonShow('±')">±</div>
+              <div class="Button" onclick="buttonShow('0')">0</div>
+              <div class="Button" onclick="buttonShow('.')">.</div>
 
             </div>
             <div class="Button-Operators">
-              <div class="Button">+</div>
-              <div class="Button">-</div>
-              <div class="Button">*</div>
-              <div class="Button">/</div>
-              <div class="Button">=</div>
+              <div class="Button" onclick="buttonShow('+')">+</div>
+              <div class="Button" onclick="buttonShow('-')">-</div>
+              <div class="Button" onclick="buttonShow('*')">*</div>
+              <div class="Button" onclick="buttonShow('/')">/</div>
+              <div class="Button" onclick="buttonShow('=')">=</div>
             </div>
           </div>
         </div>
