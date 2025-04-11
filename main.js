@@ -14,17 +14,17 @@ function createWindow() {
 }
 function mainWindowRes() {
   mainWindow = new BrowserWindow({
-    width: 300,
-    height: 400,
+    width: 400,
+    height: 480,
     minWidth: 300,
-    minHeight: 400,
+    minHeight: 480,
     maxWidth: 400,
-    maxHeight: 600,
+    maxHeight: 480,
     frame: false,
     resizable: true,
     icon: __dirname + '/icon.png',
     webPreferences: {
-      devTools: false,
+      devTools: true,
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')

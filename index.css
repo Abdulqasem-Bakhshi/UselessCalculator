@@ -26,6 +26,8 @@ html, head, main, body {
   justify-content: space-between;
   user-select: none;
   border: 1px solid blue;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .Button-Numbers {
@@ -58,7 +60,7 @@ html, head, main, body {
 
 /* Display Container */
 .Display {
-  min-height: 30px;
+  min-height: 50px;
   justify-content: center;
   align-items: center;
   display: flex;
