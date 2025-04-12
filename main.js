@@ -2,6 +2,7 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const ipcMain = electron.ipcMain;
+const { Parsrer} = require('expr-eval') // import expr-eval for expression evaluation
 const path = require('path'); // import path module for preload
 
 let mainWindow;
@@ -18,7 +19,7 @@ function mainWindowRes() {
     height: 480,
     minWidth: 300,
     minHeight: 480,
-    maxWidth: 400,
+    maxWidth: 500,
     maxHeight: 480,
     frame: false,
     resizable: true,
