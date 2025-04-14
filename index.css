@@ -48,10 +48,10 @@ html, head, main, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s;
 }
 
 .Button:hover {
-  transition: 0.2s;
   background-color: #7289da;
 }
 
@@ -95,9 +95,8 @@ html, head, main, body {
   border: 1px solid rgb(150, 150, 150);
   cursor: pointer;
   -webkit-app-region: no-drag;
-  border-radius: 2px;
+  border-radius: 10px;
   opacity: 75%;
-  border: 1px solid red;
 }
 
 .App-Button:hover {
@@ -106,6 +105,11 @@ html, head, main, body {
 
 .Navbar-Buttons {
   display: flex;
+  margin-right: 2px;
+}
+
+#App-Name1 {
+  margin-left: 2px;
 }
 
 .App-Name {
