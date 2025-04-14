@@ -1,12 +1,12 @@
-const { contextBridge, ipcRenderer } = require('electron');
-const { Parser } = require('expr-eval') // import expr-eval for expression evaluation
-console.log(Parser);
+try {
+  const { contextBridge, ipcRenderer } = require('electron');
+  
+  contextBridge.exposeInMainWorld('electronAPI', {
+    minimize: () => ipcRenderer.send('minimize-window'),
+    close: () => ipcRenderer.send('close-window'),
+  });
 
-contextBridge.exposeInMainWorld('electron', {
-  minimizeWindow: () => ipcRenderer.send('minimize-window'),
-  closeWindow: () => ipcRenderer.send('close-window'),
-});
-
-contextBridge.exposeInMainWorld('exprEval', {
-  Parser: Parser // Expose the Parser class from expr-eval to the renderer process
-})
+  console.log('Electron API loaded.');
+} catch (error) {
+  console.warn('Electron API not available (likely running in browser)', error);
+}
