@@ -2,3 +2,5 @@ node_modules
 dist
 .vscode
 draft.html
+main-draft.js
+package-lock.json
