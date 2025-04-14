@@ -97,10 +97,15 @@ html, head, main, body {
   -webkit-app-region: no-drag;
   border-radius: 2px;
   opacity: 75%;
+  border: 1px solid red;
 }
 
 .App-Button:hover {
   opacity: 100%;
+}
+
+.Navbar-Buttons {
+  display: flex;
 }
 
 .App-Name {
@@ -110,7 +115,7 @@ html, head, main, body {
   align-content: center;
   width: fit-content;
   height: 100%;
-  padding-left: 5px;
+
   align-items: center;
   display: flex;
   font-size: 15px;
@@ -127,4 +132,5 @@ html, head, main, body {
   align-items: center;
   align-content: center;
   width: auto;
+  border: 1px solid green;
 }
