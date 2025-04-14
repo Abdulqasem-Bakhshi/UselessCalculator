@@ -85,7 +85,7 @@ html, head, main, body {
   justify-content: space-between;
   align-items: center;
   height: 30px; /* Hardcoded */
-  -webkit-app-region: drag;
+  --webkit-user-drag: draggable=true;
 }
 
 .App-Button {
@@ -94,7 +94,7 @@ html, head, main, body {
   justify-content: flex-end;
   border: 1px solid rgb(150, 150, 150);
   cursor: pointer;
-  -webkit-app-region: no-drag;
+  -webkit-user-drag: draggable=false;
   border-radius: 10px;
   opacity: 75%;
 }
