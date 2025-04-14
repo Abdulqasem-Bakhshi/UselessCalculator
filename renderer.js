@@ -1,63 +1,48 @@
-let currentValue = '';
-let lastResult = '';
-
 window.onload = () => {
-  console.log('Window loaded. Binding buttons.');
+  // Minimize and Close buttons
+  const minimizeButton = document.getElementById('App-Button-Minimize');
+  const closeButton = document.getElementById('App-Button-Close');
 
-  // Make buttonShow globally accessible for inline HTML `onclick` attributes
+  // Minimize window
+  minimizeButton.addEventListener('click', () => {
+    window.electronAPI.minimizeWindow(); // Call the function exposed in preload.js
+  });
+
+  // Close window
+  closeButton.addEventListener('click', () => {
+    window.electronAPI.closeWindow(); // Call the function exposed in preload.js
+  });
+
+  // Display and current value for the calculator
+  let currentValue = "";
+  const display = document.querySelector('.Display');
+
+  // Define the buttonShow function globally to be called from HTML
   window.buttonShow = function (value) {
-    const display = document.querySelector('.Display');
-
     if (value === 'C') {
       currentValue = '';
-      lastResult = '';
     } else if (value === "CE") {
       const parts = currentValue.match(/(\d+|\D)/g);
       if (parts) {
-        parts.pop();  // Remove the last part
-        currentValue = parts.join('');
+        parts.pop(); // Remove the last part
+        currentValue = parts.join(''); // Rejoin the remaining parts
       }
-    } else if (value === '←') {
-      currentValue = currentValue.slice(0, -1);
-    } else if (value === '=') {
+      } else if (value === '←') {
+        currentValue = currentValue.slice(0, -1);
+      }
+      else if (value === '=') {
       try {
-        if (window.exprEval) {  // Ensure exprEval is available
-          const parser = new window.exprEval.Parser();
-          lastResult = parser.evaluate(currentValue).toString();
-          currentValue = lastResult;
-        } else {
-          throw new Error('exprEval is not available');
-        }
+        // Perform the calculation safely using eval (or a better method in real scenarios)
+        currentValue = eval(currentValue).toString();
       } catch (e) {
-        currentValue = 'Error';
-        console.log('Evaluation error:', e.message);
-      }
-    } else if (['+', '-', '*', '/'].includes(value)) {
-      if (lastResult && currentValue === lastResult) {
-        currentValue += value;  // Keep the last result if the current value is equal
-      } else {
-        currentValue += value;
+        currentValue = 'Error'; // Handle invalid calculations
       }
     } else if (value === '±') {
-      if (!isNaN(currentValue)) {
-        currentValue = (parseFloat(currentValue) * -1).toString();
-      }
+      currentValue = (parseFloat(currentValue) * -1).toString(); // Toggle the sign of the number
     } else {
-      currentValue += value;
+      currentValue += value; // Append the pressed button's value to the current value
     }
 
-    // Update the display
-    if (display) {
-      display.innerText = currentValue;
-    }
+    display.innerText = currentValue; // Update the display
   };
-
-  // Attach window control buttons after DOM is ready
-  document.getElementById('App-Button-Minimize')?.addEventListener('click', () => {
-    window.electronAPI?.minimize?.();
-  });
-
-  document.getElementById('App-Button-Close')?.addEventListener('click', () => {
-    window.electronAPI?.close?.();
-  });
 };

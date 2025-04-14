@@ -9,7 +9,7 @@ try {
   contextBridge.exposeInMainWorld('electronAPI', {
     minimize: () => ipcRenderer.send('minimize-window'),
     close: () => ipcRenderer.send('close-window'),
-    buttonShow: (value) = window.buttonShow(value),
+    buttonShow: (value) => window.buttonShow(value),
   });
 
   console.log('Electron API loaded.');
