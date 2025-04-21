@@ -1,5 +1,5 @@
 
-console.log(window.electronAPI); // Should log the exposed API with `minimize` and `close` methods
+console.log('checking electronAPI: ', window.electronAPI); // Should log the exposed API with `minimize` and `close` methods
 
 window.onload = () => {
   document.getElementById('App-Button-Minimize').addEventListener('click', () => {
@@ -66,7 +66,13 @@ window.onload = () => {
       if (currentValue === '' || operators.includes(currentValue.slice(-1))) {
         currentValue = ''; // Do nothing if currentValue is empty or ends with an operator
       } else {
-        currentValue = (parseFloat(currentValue) * -1).toString(); // Toggle the sign of the number
+        if (currentValue === '0.') {
+          currentValue = '-0.';
+        } else if (currentValue === '-0.') {
+          currentValue = '0.';
+        } else {
+          currentValue = (parseFloat(currentValue) * -1).toString(); // Toggle the sign of the number
+        }
       } // <-- This closing brace was missing
     } else {
       currentValue += value; // Append the pressed button's value to the current value

@@ -20,7 +20,7 @@ function mainWindowRes() {
     icon: __dirname + '/icon.png',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      devTools: true,
+      devTools: false,
       nodeIntegration: false,
       contextIsolation: true
     },
