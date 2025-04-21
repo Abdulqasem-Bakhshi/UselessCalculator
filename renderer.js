@@ -47,7 +47,19 @@ window.onload = () => {
       } else if (!currentValue.includes('.')) {
         currentValue += '.'; // Append '.' only if it doesn't already exist
       }
-    } 
+    }
+
+    else if (currentValue === '0') {
+      if (value === '0') {
+        currentValue = '0';
+        if (value === '.') {
+          currentValue += '.'; // Append '.' if the value is '.'
+        }
+        if (value === '±') {
+          currentValue = '-0'; // Append '-0' if the value is '±'
+        }
+      }
+    }
     
     else if (value === '=') {
       if (currentValue.trim() === '') {
