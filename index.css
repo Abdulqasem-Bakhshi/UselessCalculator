@@ -13,9 +13,6 @@ html, head, main, body {
 
 /* Calculator Container */
 .Calculator-Wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -23,8 +20,6 @@ html, head, main, body {
 }
 
 .Calculator {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -48,7 +43,6 @@ html, head, main, body {
   align-items: center;
   align-content: center;
   width: fit-content;
-  height: 100%;
   align-items: center;
   display: flex;
   font-size: 15px;
@@ -66,7 +60,6 @@ html, head, main, body {
 
 .App-Button {
   display: flex;
-  height: 100%;
   justify-content: flex-end;
   border: 1px solid rgb(150, 150, 150);
   cursor: pointer;
@@ -81,7 +74,7 @@ html, head, main, body {
 
 /* Display Container */
 .Display {
-  min-height: 50px;
+  min-height: 75px; /* Hardcoded height for Display*/
   max-height: 20%;
   justify-content: center;
   align-items: center;
@@ -96,7 +89,7 @@ html, head, main, body {
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; /* Buttons take remaining render */
 }
 
 .Button-Container {
@@ -104,12 +97,12 @@ html, head, main, body {
   flex-direction: row;
   justify-content: space-between;
   user-select: none;
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 100%; /* Buttons take remaining render */
+  min-width: 100%;  /* Buttons take remaining render */
 }
 
 .Button-Numbers {
-  width: 75%;
+  width: 75%; /* 75% of the screen taken by Button-Numbers container */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -118,7 +111,7 @@ html, head, main, body {
 }
 
 .Button-Operators {
-  width: 25%;
+  width: 25%; /* 25% of the screen taken by Button-Numbers container */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(5, 1fr);

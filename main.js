@@ -13,6 +13,8 @@ function mainWindowRes() {
   mainWindow = new BrowserWindow({
     minWidth: 300,
     minHeight: 400,
+    width: 300,
+    height: 400,
     frame: false,
     resizable: true,
     icon: __dirname + '/icon.png',
