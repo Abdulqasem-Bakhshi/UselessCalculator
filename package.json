@@ -20,10 +20,11 @@
     "productName": "calculator",
     "compression": "maximum",
     "files": [
-      "main.js",
-      "renderer.js",
       "index.html",
+      "index.css",
+      "main.js",
       "preload.js",
+      "renderer.js",
       "icon.png",
       "node_modules/**/*"
     ],

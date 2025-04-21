@@ -1,7 +1,4 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-const ipcMain = electron.ipcMain;
+const { app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path'); // import path module for preload
 
 let mainWindow;
@@ -10,24 +7,20 @@ function createWindow() {
   if (mainWindow) {
     return;
   }
-
+  mainWindowRes(); // Call the function to create the main window
 }
 function mainWindowRes() {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 480,
     minWidth: 300,
-    minHeight: 480,
-    maxWidth: 500,
-    maxHeight: 480,
+    minHeight: 400,
     frame: false,
     resizable: true,
     icon: __dirname + '/icon.png',
     webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
       devTools: true,
       nodeIntegration: false,
-      contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js')
+      contextIsolation: true
     },
   });
 

@@ -8,6 +8,87 @@
 html, head, main, body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+/* Calculator Container */
+.Calculator-Wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.Calculator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px; /* Hardcoded */
+  -webkit-app-region: drag;
+}
+
+#App-Name {
+  margin-left: 2px;
+}
+
+.App-Name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  opacity: 75%;
+  overflow: hidden; /* Hide/Cut text behind borders */
+  text-overflow: ellipsis; /* Use ellipsis to cut text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  user-select: none; /* Prevent text selection */
+}
+
+.Navbar-Buttons {
+  display: flex;
+  margin-right: 2px;
+}
+
+.App-Button {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  border: 1px solid rgb(150, 150, 150);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  border-radius: 10px;
+  opacity: 75%;
+}
+
+.App-Button:hover {
+  opacity: 100%;
+}
+
+/* Display Container */
+.Display {
+  min-height: 50px;
+  max-height: 20%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 0 15px;
 }
 
 /* Buttons Constainer and its Children */
@@ -53,88 +134,4 @@ html, head, main, body {
 
 .Button:hover {
   background-color: #7289da;
-}
-
-/* Display Container */
-.Display {
-  min-height: 50px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: black;
-  color: white;
-}
-
-/* Calculator Container */
-
-.Calculator-Wrap {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-}
-
-.Calculator {
-  width: 100%;
-  height: 400px; /* Hardcoded */
-}
-
-.Navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px; /* Hardcoded */
-  -webkit-app-region: drag;
-}
-
-.App-Button {
-  display: flex;
-  height: 100%;
-  justify-content: flex-end;
-  border: 1px solid rgb(150, 150, 150);
-  cursor: pointer;
-  -webkit-app-region: no-drag;
-  border-radius: 10px;
-  opacity: 75%;
-}
-
-.App-Button:hover {
-  opacity: 100%;
-}
-
-.Navbar-Buttons {
-  display: flex;
-  margin-right: 2px;
-}
-
-#App-Name1 {
-  margin-left: 2px;
-}
-
-.App-Name {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: fit-content;
-  height: 100%;
-
-  align-items: center;
-  display: flex;
-  font-size: 15px;
-  opacity: 75%;
-  overflow: hidden; /* Hide/Cut text behind borders */
-  text-overflow: ellipsis; /* Use ellipsis to cut text */
-  white-space: nowrap; /* Prevent text from wrapping */
-  user-select: none; /* Prevent text selection */
-}
-
-#App-Name {
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: auto;
-  border: 1px solid green;
 }
