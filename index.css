@@ -33,19 +33,30 @@ html, head, main, body {
   -webkit-app-region: drag;
 }
 
+.Navbar-Title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.Navbar-Title svg {
+  margin: 0;
+  padding: 0;
+  display: block; /* Remove default SVG margin */
+}
+
 #App-Name {
   margin-left: 2px;
+  margin-right: 5px;
 }
 
 .App-Name {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: fit-content;
-  align-items: center;
-  display: flex;
-  font-size: 15px;
+  font-weight: 500;
+  justify-content: flex-start;
+  font-size: 16px;
   opacity: 75%;
   overflow: hidden; /* Hide/Cut text behind borders */
   text-overflow: ellipsis; /* Use ellipsis to cut text */
@@ -55,7 +66,15 @@ html, head, main, body {
 
 .Navbar-Buttons {
   display: flex;
-  margin-right: 2px;
+  flex-direction: row;
+}
+
+.Navbar-Buttons-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
 }
 
 .App-Button {
@@ -64,12 +83,12 @@ html, head, main, body {
   border: 1px solid rgb(150, 150, 150);
   cursor: pointer;
   -webkit-app-region: no-drag;
-  border-radius: 10px;
   opacity: 75%;
 }
 
 .App-Button:hover {
   opacity: 100%;
+  border: 1px solid rgb(150, 150, 150);
 }
 
 /* Display Container */
