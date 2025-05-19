@@ -31,6 +31,7 @@ html, head, main, body {
   align-items: center;
   height: 30px; /* Hardcoded */
   -webkit-app-region: drag;
+  background-color: black;
 }
 
 .Navbar-Title {
@@ -52,21 +53,19 @@ html, head, main, body {
   margin-right: 5px;
 }
 
+#App-Name svg {
+  color: white;
+}
+
 .App-Name {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 500;
   justify-content: flex-start;
   font-size: 16px;
-  opacity: 75%;
   overflow: hidden; /* Hide/Cut text behind borders */
   text-overflow: ellipsis; /* Use ellipsis to cut text */
   white-space: nowrap; /* Prevent text from wrapping */
   user-select: none; /* Prevent text selection */
-}
-
-.Navbar-Buttons {
-  display: flex;
-  flex-direction: row;
+  color: white;
 }
 
 .Navbar-Buttons-Container {
@@ -77,18 +76,32 @@ html, head, main, body {
   height: fit-content;
 }
 
+.Navbar-Buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 .App-Button {
   display: flex;
   justify-content: flex-end;
-  border: 1px solid rgb(150, 150, 150);
   cursor: pointer;
   -webkit-app-region: no-drag;
-  opacity: 75%;
+  color: white;
+}
+
+.App-Button svg {
+  margin: 0;
+  padding: 0;
+  display: block; /* Remove default SVG margin */
 }
 
 .App-Button:hover {
   opacity: 100%;
-  border: 1px solid rgb(150, 150, 150);
+  background-color: rgb(180, 180, 180);
+}
+
+#App-Button-Close:hover {
+  background-color: red;
 }
 
 /* Display Container */
@@ -142,7 +155,7 @@ html, head, main, body {
   justify-content: center;
   align-items: center;
   transition: 0.2s;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .Button:hover {

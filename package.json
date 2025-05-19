@@ -1,7 +1,7 @@
 {
   "name": "useless-calculator",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "scripts/main.js",
   "scripts": {
     "start": "electron .",
     "app:dir": "electron-builder --dir",
@@ -21,11 +21,9 @@
     "compression": "maximum",
     "files": [
       "index.html",
-      "index.css",
-      "main.js",
-      "preload.js",
-      "renderer.js",
-      "icon.png",
+      "styles/**/**",
+      "scripts/**/**",
+      "assets/**/**",
       "node_modules/**/*"
     ],
     "extraFiles": [

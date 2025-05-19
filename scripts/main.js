@@ -17,13 +17,22 @@ function mainWindowRes() {
     height: 400,
     frame: false,
     resizable: true,
-    icon: __dirname + '/icon.png',
+    icon: path.join(__dirname, '../assets/icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      devTools: false,
+      devTools: true,
       nodeIntegration: false,
       contextIsolation: true
     },
+  });
+
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+    if (
+      (input.control || input.meta) &&
+      (['+', '-', '=', '0'].includes(input.key))
+    ) {
+      event.preventDefault();
+    }
   });
 
   mainWindow.loadFile('index.html');
